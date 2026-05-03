@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Restaurări | Arad Renaște</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ARAD RENAȘTE</div>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="cladiri.html">Clădiri</a></li>
+            <li><a href="tehnologie.html">Tehnologie AI</a></li>
+            <li><a href="despre.html">Despre</a></li>
+        </ul>
+    </nav>
+
+    <main class="container-cladiri">
+        <header class="tech-header">
+            <h1>Galerie Proiecte</h1>
+            <p style="text-align: center;">Explorează transformarea digitală a celor mai importante monumente uitate din Arad.</p>
+        </header>
+
+        <div class="gallery-grid">
+            
+            <!-- Clădirea 1: Teatrul Vechi -->
+            <div class="comparison-card">
+                <h3>01. Teatrul Vechi (Hirschl)</h3>
+                <div class="slider-wrapper">
+                    <div class="image-after" style="background-image: url('img/TeatrulVechiRestored.jpg');"></div>
+                    <div class="image-before" style="background-image: url('img/TeatrulVechi.jpg');"></div>
+                    <input type="range" min="0" max="100" value="50" class="slider-input">
+                </div>
+            </div>
+
+            <!-- Clădirea 2: Cazinoul Arad (Exemplu) -->
+            <div class="comparison-card">
+                <h3>02. Fabrica MARTA</h3>
+                <div class="slider-wrapper">
+                    <div class="image-after" style="background-image: url('img/MartaRestored.jpg');"></div>
+                    <div class="image-before" style="background-image: url('img/Marta.jpg');"></div>
+                    <input type="range" min="0" max="100" value="50" class="slider-input">
+                </div>
+            </div>
+
+            <div class="comparison-card">
+                <h3>03. Casa cu iederă</h3>
+                <div class="slider-wrapper">
+                    <div class="image-after" style="background-image: url('img/iederaRestored.jpg');"></div>
+                    <div class="image-before" style="background-image: url('img/iedera.jpg');"></div>
+                    <input type="range" min="0" max="100" value="50" class="slider-input">
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <h3>04. Depou CFR</h3>
+                <div class="slider-wrapper">
+                    <div class="image-after" style="background-image: url('img/depouRestored.jpg');"></div>
+                    <div class="image-before" style="background-image: url('img/depou.jpg');"></div>
+                    <input type="range" min="0" max="100" value="50" class="slider-input">
+                </div>
+            </div>
+
+            <div class="comparison-card">
+                <h3>05. Unitate Ineu</h3>
+                <div class="slider-wrapper">
+                    <div class="image-after" style="background-image: url('img/unitateIneuRestored.jpg');"></div>
+                    <div class="image-before" style="background-image: url('img/unitateIneu.png');"></div>
+                    <input type="range" min="0" max="100" value="50" class="slider-input">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Arad Renaște - Arhivă Digitală</p>
+    </footer>
+
+    <script>
+        // Script pentru a controla TOATE slider-ele din pagină
+        const sliders = document.querySelectorAll('.slider-input');
+        
+        sliders.forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const sliderValue = e.target.value;
+                // Găsim imaginea "before" din același card cu slider-ul mișcat
+                const beforeImg = e.target.parentElement.querySelector('.image-before');
+                beforeImg.style.width = sliderValue + "%";
+            });
+        });
+    </script>
+</body>
+</html>

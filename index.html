@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aradul Renaste</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ARAD RENAȘTE</div>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="cladiri.html">Clădiri</a></li>
+            <li><a href="tehnologie.html">Tehnologie AI</a></li>
+            <li><a href="despre.html">Despre</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Redăm gloria Aradului de altădată</h1>
+        <p>Folosim inteligența artificială pentru a vizualiza potențialul clădirilor istorice uitate și a atrage atenția asupra necesității restaurării lor.</p>
+    </header>
+
+    <section class="comparison-container">
+        <h2>Viziune: Teatrul Vechi Arad</h2>
+        <p>Glisează cursorul pentru a vedea diferența</p>
+        
+        <div class="slider-wrapper">
+            <!-- Stratul 1: POZA RESTAURATĂ (stă fixă în spate) -->
+            <div class="image-after"></div>
+            
+            <!-- Stratul 2: POZA VECHE (se modifică lățimea) -->
+            <div class="image-before" id="comparison-img"></div>
+            
+            <!-- Cursorul -->
+            <input type="range" min="0" max="100" value="50" oninput="moveSlider(this.value)">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Arad Renaște - Proiect Atestat Informatică</p>
+    </footer>
+
+    <script>
+        function moveSlider(val) {
+            document.getElementById('comparison-img').style.width = val + "%";
+        }
+    </script>
+
+</body>
+</html>

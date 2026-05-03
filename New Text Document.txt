@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aradul Pierdut | Restaurare AI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Integrat pentru ușurință, dar îl poți muta în style.css */
+        :root {
+            --primary: #c0392b; /* Roșu cărămiziu pentru contrast */
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000'); /* Placeholder image */
+            background-size: cover;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; }
+
+        /* Comparison Slider Section */
+        .comparison-container {
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .image-before, .image-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Placeholder colors - Înlocuiește cu imaginile tale */
+        .image-before {
+            background-image: url('https://via.placeholder.com/800x500/555/fff?text=CLADIRE+ABANDONATA');
+        }
+        
+        .image-after {
+            background-image: url('https://via.placeholder.com/800x500/c0392b/fff?text=RESTAURARE+AI');
+            width: 50%; /* Start la jumătate */
+            border-right: 4px solid white;
+        }
+
+        input[type="range"] {
+            position: absolute;
+            -webkit-appearance: none;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            outline: none;
+            margin: 0;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ARAD RENAȘTE</div>
+        <ul>
+            <li><a href="#">Acasă</a></li>
+            <li><a href="#">Clădiri</a></li>
+            <li><a href="#">Tehnologie AI</a></li>
+            <li><a href="#">Despre</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Redăm gloria Aradului de altădată</h1>
+        <p>Folosim inteligența artificială pentru a vizualiza potențialul clădirilor istorice uitate și a atrage atenția asupra necesității restaurării lor.</p>
+    </header>
+
+    <section class="comparison-container">
+        <h2>Viziune: Teatrul Vechi Arad</h2>
+        <p>Glisează cursorul pentru a vedea diferența</p>
+        
+        <div class="slider-wrapper">
+            <div class="image-before"></div>
+            <div class="image-after" id="after-img"></div>
+            <input type="range" min="0" max="100" value="50" oninput="moveSlider(this.value)">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Proiect Atestat Informatică - Elev Nume Prenume</p>
+    </footer>
+
+    <script>
+        function moveSlider(val) {
+            document.getElementById('after-img').style.width = val + "%";
+        }
+    </script>
+
+</body>
+</html>
